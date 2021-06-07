@@ -5,4 +5,4 @@
   - For baseline: `./run-test.sh -b master`
   - For changes: `./run-test.sh -b changed`
 
-Note: Viewport Screenshot is a limitation of Appium. Multiple screenshots and image processing to stitch images will be required to get full page screenshots on real mobile devices.
+Note: Viewport Screenshot is a limitation of Appium. To get full page screenshots on real mobile devices multiple screenshots and image processing to stitch images will be required.
