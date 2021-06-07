@@ -13,6 +13,15 @@ describe("Website Tests", () => {
 		browser.url(`${browser.launchUrl}/login.html`);
 		browser.pause(3000);
 		browser.saveScreenshot('images/login.png');
+		browser.url(`${browser.launchUrl}/signup.html`);
+		browser.pause(3000);
+		browser.saveScreenshot('images/signup.png');
+		browser.url(`${browser.launchUrl}/404_error.html`);
+		browser.pause(3000);
+		browser.saveScreenshot('images/404_error.png');
+		browser.url(`${browser.launchUrl}/500_error.html`);
+		browser.pause(3000);
+		browser.saveScreenshot('images/500_error.png');
 	});
 
 	after(commonHooks.after);
