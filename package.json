@@ -1,0 +1,15 @@
+{
+  "name": "percy-upload-nightwatch-browserstack",
+  "version": "0.0.1",
+  "readme": "",
+  "description": "",
+  "scripts": {
+    "test": "npm run local",
+    "local": "node ./runner/browserstack_local.js -c ./runner/browserstack.js --env android_local"
+  },
+  "dependencies": {
+    "browserstack-local": "^1.4.8",
+    "nightwatch": "^1.7.2"
+  },
+  "license": "MIT"
+}
