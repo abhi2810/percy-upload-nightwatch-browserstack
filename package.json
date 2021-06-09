@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "browserstack-local": "^1.4.8",
-    "nightwatch": "^1.7.2"
+    "jimp": "^0.16.1",
+    "join-images": "^0.2.6",
+    "nightwatch": "^1.7.2",
+    "rimraf": "^2.5.4"
   },
   "license": "MIT"
 }

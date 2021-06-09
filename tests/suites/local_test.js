@@ -1,28 +1,38 @@
-const commonHooks = require("../hooks");
+const commonHooks = require("../utils/hooks");
+const { saveScreenshot } = require("../utils/screenshotUtil");
 
 describe("Website Tests", () => {
-	this.tags = ["product"];
+  this.tags = ["product"];
 
-	beforeEach(commonHooks.beforeEach);
-	afterEach(commonHooks.afterEach);
+  beforeEach(commonHooks.beforeEach);
+  afterEach(commonHooks.afterEach);
 
-	it("HomePage", (browser) => {
-		browser.waitForElementVisible('.wrapper');
-		browser.pause(5000);
-		browser.saveScreenshot('images/index.png');
-		browser.url(`${browser.launchUrl}/login.html`);
-		browser.pause(3000);
-		browser.saveScreenshot('images/login.png');
-		browser.url(`${browser.launchUrl}/signup.html`);
-		browser.pause(3000);
-		browser.saveScreenshot('images/signup.png');
-		browser.url(`${browser.launchUrl}/404_error.html`);
-		browser.pause(3000);
-		browser.saveScreenshot('images/404_error.png');
-		browser.url(`${browser.launchUrl}/500_error.html`);
-		browser.pause(3000);
-		browser.saveScreenshot('images/500_error.png');
-	});
+  it("screenshots", async (browser) => {
+    await browser.waitForElementVisible(".wrapper");
+    await browser.pause(5000);
+    await saveScreenshot(browser, "HomePage");
+    // browser.saveScreenshot('images/index.png');
 
-	after(commonHooks.after);
+    await browser.url(`${browser.launchUrl}/login.html`);
+    await browser.pause(2000);
+    await saveScreenshot(browser, "Login");
+    // browser.saveScreenshot('images/login.png');
+
+    await browser.url(`${browser.launchUrl}/signup.html`);
+    await browser.pause(2000);
+    await saveScreenshot(browser, "Signup");
+    // browser.saveScreenshot('images/signup.png');
+
+    await browser.url(`${browser.launchUrl}/404_error.html`);
+    await browser.pause(2000);
+    await saveScreenshot(browser, "404_error");
+    // browser.saveScreenshot('images/404_error.png');
+
+    await browser.url(`${browser.launchUrl}/500_error.html`);
+    await browser.pause(2000);
+    await saveScreenshot(browser, "500_error");
+    // browser.saveScreenshot('images/500_error.png');
+  });
+
+  after(commonHooks.after);
 });
