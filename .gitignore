@@ -3,3 +3,5 @@ local.log
 node_modules
 results
 images
+temp
+.DS_Store
